@@ -9,7 +9,7 @@
   --muted: #8a80a8;
   --accent: #b3a3ec;
   --accent-soft: #2a2438;
-  --nav-bg: rgba(19, 17, 24, 0.85);
+  --nav-bg: rgba(19, 17, 24, 0.95);
   --radius: 14px;
 }
 
@@ -58,7 +58,7 @@ main{ flex: 1; }
 }
 .nav-brand{
   font-family: 'Geist Sans', sans-serif;
-  font-weight: 600; font-size: 14px; margin-right: auto;
+  color: #f4f1fb; font-weight: 700; font-size: 14px; margin-right: auto;
 }
 .nav-links{ display: flex; gap: 22px; }
 .nav-link{ font-size: 13px; color: var(--ink-soft); padding: 4px 0; border-bottom: 2px solid transparent; }

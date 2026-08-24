@@ -35,7 +35,7 @@ export default function Home({ onNavigate }) {
         <div className="hero-inner">
           <span className="badge">Available for opportunities</span>
           <h1>
-            Full-stack developer specializing in <em>ML/AI engineering.</em>
+            Meroline Lizlent, full-stack developer specializing in <em>ML/AI engineering.</em>
           </h1>
           <p className="hero-lede">
             I'm Meroline Lizlent. I build end-to-end software across
