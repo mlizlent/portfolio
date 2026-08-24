@@ -8,7 +8,7 @@ export default function ProjectDetail({ slug, onBack }) {
     return (
       <section className="section page-top">
         <h1>Project not found</h1>
-        <button onClick={onBack} className="link-arrow" style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '14px' }}>
+        <button onClick={onBack} className="link-arrow" style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '13px' }}>
           <ArrowLeft size={15} /> Back to projects
         </button>
       </section>
@@ -17,7 +17,7 @@ export default function ProjectDetail({ slug, onBack }) {
 
   return (
     <section className="section page-top">
-      <button onClick={onBack} className="link-arrow back-link" style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '14px' }}>
+      <button onClick={onBack} className="link-arrow back-link" style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '13px' }}>
         <ArrowLeft size={15} /> Back to projects
       </button>
 

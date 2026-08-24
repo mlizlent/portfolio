@@ -16,6 +16,14 @@ const SKILLS = [
   "PostgreSQL",
   "Tailwind CSS",
   "Figma",
+  "JavaScript",
+  "Go",
+  "Next.js",
+  "Svelte",
+  "CLI",
+  "CI/CD",
+  "Pipeline Automation",
+  "Linux",
 ];
 
 export default function Home({ onNavigate }) {
@@ -31,7 +39,7 @@ export default function Home({ onNavigate }) {
           </h1>
           <p className="hero-lede">
             I'm Meroline Lizlent. I build end-to-end software across
-            frontend, backend, UI/UX design, and Docker — with a deep focus
+            frontend, backend, UI/UX design, and Docker, with a deep focus
             on machine learning and AI-powered products.
           </p>
           <div className="hero-actions" style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -49,7 +57,7 @@ export default function Home({ onNavigate }) {
         <h2>Skills &amp; tools</h2>
         <p className="muted">
           I work across the full stack and bring ML/AI expertise to every
-          layer of the product — from interface to infrastructure.
+          layer of the product, from interface to infrastructure.
         </p>
         <div className="skill-cloud">
           {SKILLS.map((s) => (

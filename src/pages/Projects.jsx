@@ -6,7 +6,7 @@ export default function Projects({ onViewProject }) {
     <section className="section page-top">
       <h1>Projects</h1>
       <p className="muted">
-        Everything here has been built end to end — frontend, backend, and
+        Everything here has been built end to end, frontend, backend, and
         the infrastructure to ship it.
       </p>
 
