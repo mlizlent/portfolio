@@ -7,6 +7,7 @@ import Projects from "./pages/Projects";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import ProjectDetail from "./pages/ProjectDetail";
+import projectsData from "../data/projects";
 
 const SITE_TITLE = "Meroline Lizlent — Full-Stack & ML Engineer";
 const SITE_DESC = "Full-stack software developer specializing in ML/AI engineering, frontend, backend, UI/UX design, and Docker.";
@@ -35,7 +36,7 @@ export default function App() {
   const [activeTab, setActiveTab] = useState("home");
   const [selectedProjectSlug, setSelectedProjectSlug] = useState(null);
   const selectedProject = selectedProjectSlug
-    ? require("../data/projects").default.find((p) => p.slug === selectedProjectSlug)
+    ? projectsData.find((p) => p.slug === selectedProjectSlug)
     : null;
 
   const handleViewProject = (slug) => {
