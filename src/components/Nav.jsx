@@ -1,42 +1,49 @@
-import { NavLink } from "react-router-dom";
 import { Code2, Menu, X } from "lucide-react";
 import { useState } from "react";
-import ThemeToggle from "./ThemeToggle";
 
 const LINKS = [
-  { to: "/", label: "Home" },
-  { to: "/projects", label: "Projects" },
-  { to: "/about", label: "About" },
-  { to: "/contact", label: "Contact" },
+  { id: "home", label: "Home" },
+  { id: "projects", label: "Projects" },
+  { id: "about", label: "About" },
+  { id: "contact", label: "Contact" },
 ];
 
-export default function Nav() {
+export default function Nav({ currentTab, onChangeTab }) {
   const [open, setOpen] = useState(false);
+
+  const handleTabClick = (id) => {
+    onChangeTab(id);
+    setOpen(false); // Close mobile drawer if open
+  };
 
   return (
     <header className="nav">
       <div className="nav-inner">
-        <NavLink to="/" className="nav-brand" onClick={() => setOpen(false)}>
+        <button 
+          onClick={() => handleTabClick("home")} 
+          className="nav-brand"
+          style={{ background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left' }}
+        >
           Meroline Lizlent
-        </NavLink>
+        </button>
 
         <nav className="nav-links">
           {LINKS.map((l) => (
-            <NavLink
-              key={l.to}
-              to={l.to}
-              end={l.to === "/"}
-              className={({ isActive }) =>
-                "nav-link" + (isActive ? " nav-link-active" : "")
+            <button
+              key={l.id}
+              onClick={() => handleTabClick(l.id)}
+              className={
+                "nav-link" + (currentTab === l.id ? " nav-link-active" : "")
               }
+              style={{ background: 'none', border: 'none', cursor: 'pointer' }}
             >
               {l.label}
-            </NavLink>
+            </button>
           ))}
         </nav>
 
         <a
-          href="https://github.com/mlizlent"
+          href="https://github.com"
           target="_blank"
           rel="noreferrer"
           className="nav-github"
@@ -44,8 +51,6 @@ export default function Nav() {
           <Code2 size={16} />
           <span>GitHub</span>
         </a>
-
-        <ThemeToggle />
 
         <button
           className="nav-burger"
@@ -56,23 +61,23 @@ export default function Nav() {
         </button>
       </div>
 
+      {/* Mobile Drawer Navigation */}
       {open && (
         <nav className="nav-mobile">
           {LINKS.map((l) => (
-            <NavLink
-              key={l.to}
-              to={l.to}
-              end={l.to === "/"}
-              onClick={() => setOpen(false)}
-              className={({ isActive }) =>
-                "nav-mobile-link" + (isActive ? " nav-link-active" : "")
+            <button
+              key={l.id}
+              onClick={() => handleTabClick(l.id)}
+              className={
+                "nav-mobile-link" + (currentTab === l.id ? " nav-link-active" : "")
               }
+              style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'block', width: '100%', textAlign: 'left' }}
             >
               {l.label}
-            </NavLink>
+            </button>
           ))}
           <a
-            href="https://github.com/mlizlent"
+            href="https://github.com"
             target="_blank"
             rel="noreferrer"
             className="nav-mobile-link"

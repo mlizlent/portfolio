@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
 import projects from "../data/projects";
 
 const SKILLS = [
@@ -20,8 +18,7 @@ const SKILLS = [
   "Figma",
 ];
 
-export default function Home() {
-  const featured = projects.slice(0, 4);
+export default function Home({ onNavigate }) {
 
   return (
     <>
@@ -37,45 +34,14 @@ export default function Home() {
             frontend, backend, UI/UX design, and Docker — with a deep focus
             on machine learning and AI-powered products.
           </p>
-          <div className="hero-actions">
-            <Link to="/projects" className="btn btn-primary">
+          <div className="hero-actions" style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <button onClick={() => onNavigate("projects")} className="btn btn-primary">
               View my work
-            </Link>
-            <Link to="/contact" className="btn btn-ghost">
+            </button>
+            <button onClick={() => onNavigate("contact")} className="btn btn-ghost">
               Get in touch
-            </Link>
+            </button>
           </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="section-head">
-          <div>
-            <h2>Featured work</h2>
-            <p className="muted">A selection of projects I've built across the stack.</p>
-          </div>
-          <Link to="/projects" className="link-arrow">
-            See all projects <ArrowUpRight size={15} />
-          </Link>
-        </div>
-
-        <div className="grid">
-          {featured.map((p) => (
-            <Link to={`/projects/${p.slug}`} key={p.slug} className="card">
-              <h3>{p.name}</h3>
-              <p>{p.tagline}</p>
-              <div className="tag-row">
-                {p.tags.map((t) => (
-                  <span className="tag" key={t}>
-                    {t}
-                  </span>
-                ))}
-              </div>
-              <span className="card-cta">
-                Read case study <ArrowUpRight size={14} />
-              </span>
-            </Link>
-          ))}
         </div>
       </section>
 
@@ -100,9 +66,9 @@ export default function Home() {
           I'm open to freelance projects, collaborations, and full-time
           opportunities in software and ML/AI engineering.
         </p>
-        <Link to="/contact" className="btn btn-primary">
-          Start a conversation
-        </Link>
+          <button onClick={() => onNavigate("contact")} className="btn btn-primary">
+            Start a conversation
+          </button>
       </section>
     </>
   );

@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import projects from "../data/projects";
 
-export default function Projects() {
+export default function Projects({ onViewProject }) {
   return (
     <section className="section page-top">
       <h1>Projects</h1>
@@ -13,7 +12,7 @@ export default function Projects() {
 
       <div className="grid">
         {projects.map((p) => (
-          <Link to={`/projects/${p.slug}`} key={p.slug} className="card">
+          <button onClick={() => onViewProject(p.slug)} key={p.slug} className="card" style={{ background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', width: '100%' }}>
             <h3>{p.name}</h3>
             <p>{p.tagline}</p>
             <div className="tag-row">
@@ -26,7 +25,7 @@ export default function Projects() {
             <span className="card-cta">
               Read case study <ArrowUpRight size={14} />
             </span>
-          </Link>
+          </button>
         ))}
       </div>
     </section>

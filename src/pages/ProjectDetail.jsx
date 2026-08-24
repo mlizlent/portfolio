@@ -1,27 +1,25 @@
-import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import projects from "../data/projects";
 
-export default function ProjectDetail() {
-  const { slug } = useParams();
+export default function ProjectDetail({ slug, onBack }) {
   const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
     return (
       <section className="section page-top">
         <h1>Project not found</h1>
-        <Link to="/projects" className="link-arrow">
+        <button onClick={onBack} className="link-arrow" style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '14px' }}>
           <ArrowLeft size={15} /> Back to projects
-        </Link>
+        </button>
       </section>
     );
   }
 
   return (
     <section className="section page-top">
-      <Link to="/projects" className="link-arrow back-link">
+      <button onClick={onBack} className="link-arrow back-link" style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '14px' }}>
         <ArrowLeft size={15} /> Back to projects
-      </Link>
+      </button>
 
       <h1>{project.name}</h1>
       <p className="muted lede">{project.tagline}</p>
