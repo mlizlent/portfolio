@@ -7,7 +7,7 @@ import Projects from "./pages/Projects";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import ProjectDetail from "./pages/ProjectDetail";
-import projectsData from "../data/projects";
+import projectsData from "../data/projects.js";
 
 const SITE_TITLE = "Meroline Lizlent — Full-Stack & ML Engineer";
 const SITE_DESC = "Full-stack software developer specializing in ML/AI engineering, frontend, backend, UI/UX design, and Docker.";

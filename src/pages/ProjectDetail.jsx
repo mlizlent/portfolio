@@ -1,5 +1,5 @@
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
-import projects from "../data/projects";
+import projects from "../data/projects.js";
 
 export default function ProjectDetail({ slug, onBack }) {
   const project = projects.find((p) => p.slug === slug);

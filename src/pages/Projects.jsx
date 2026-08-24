@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import projects from "../data/projects";
+import projects from "../data/projects.js";
 
 export default function Projects({ onViewProject }) {
   return (
