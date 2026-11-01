@@ -1,7 +1,7 @@
-import ProjectCard from "../components/ProjectCard.jsx";
+import ProjectViewer from "../components/ProjectViewer.jsx";
 import projects from "../data/projects.js";
 
-export default function Projects({ onViewProject }) {
+export default function Projects() {
   return (
     <section className="section page-top">
       <div className="projects-hero">
@@ -21,10 +21,8 @@ export default function Projects({ onViewProject }) {
         </div>
       </div>
 
-      <div className="grid">
-        {projects.map((p) => (
-          <ProjectCard key={p.slug} project={p} onViewProject={onViewProject} />
-        ))}
+      <div style={{ marginTop: 32, maxWidth: 720, marginLeft: 'auto', marginRight: 'auto' }}>
+        <ProjectViewer projects={projects} />
       </div>
     </section>
   );

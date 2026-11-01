@@ -49,7 +49,7 @@ export default function App() {
       case "home":
         return <Home onViewProject={handleViewProject} onNavigate={setActiveTab} />;
       case "projects":
-        return <Projects onViewProject={handleViewProject} />;
+        return <Projects />;
       case "about":
         return <About />;
       case "contact":
