@@ -75,7 +75,7 @@ export default function Moments() {
   }, []);
 
   return (
-    <div className="home-page">
+    <div className="home-page" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>
       <section className="section page-top">
         <h1 style={{ color: "var(--accent)", fontWeight: 300 }}>Moments</h1>
         <article style={{ marginTop: 24 }}>
