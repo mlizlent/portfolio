@@ -1,7 +1,11 @@
+import { useState } from "react";
+import ProjectCard from "../components/ProjectCard.jsx";
 import ProjectViewer from "../components/ProjectViewer.jsx";
 import projects from "../data/projects.js";
 
 export default function Projects() {
+  const [selectedSlug, setSelectedSlug] = useState(null);
+
   return (
     <section className="section page-top">
       <div className="projects-hero">
@@ -21,9 +25,24 @@ export default function Projects() {
         </div>
       </div>
 
-      <div style={{ marginTop: 32, maxWidth: 720, marginLeft: 'auto', marginRight: 'auto' }}>
-        <ProjectViewer projects={projects} />
-      </div>
+      {selectedSlug ? (
+        <div style={{ maxWidth: 720, margin: "32px auto 0 auto" }}>
+          <ProjectViewer projects={projects} startSlug={selectedSlug} />
+          <button
+            onClick={() => setSelectedSlug(null)}
+            style={{ marginTop: 24, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 13, color: 'var(--accent)', fontWeight: 500, cursor: 'pointer', border: 'none', background: 'none', padding: 0 }}
+          >
+            <svg width="10" height="10" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
+            Back to listing
+          </button>
+        </div>
+      ) : (
+        <div className="grid">
+          {projects.map((p) => (
+            <ProjectCard key={p.slug} project={p} onViewProject={() => setSelectedSlug(p.slug)} />
+          ))}
+        </div>
+      )}
     </section>
   );
 }
