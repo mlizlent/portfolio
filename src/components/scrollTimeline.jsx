@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView, useTransform, useMotionValue } from "framer-motion";
 
-function MilestoneItem({ milestone }) {
+function MilestoneItem({ milestone, isLeft }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-10%" });
 
@@ -16,18 +16,116 @@ function MilestoneItem({ milestone }) {
       }
       style={{
         display: "flex",
-        flexDirection: "column",
+        flexDirection: "row",
+        alignItems: "center",
         position: "relative",
+        width: "100%",
         zIndex: 2,
       }}
     >
-      {/* Milestone marker node */}
+      {/* Left-side content */}
+      {isLeft && (
+        <div
+          style={{
+            width: "48%",
+            textAlign: "right",
+            paddingRight: 12,
+          }}
+        >
+          <h3
+            style={{
+              margin: "0 0 8px 0",
+              color: "var(--ink)",
+              fontSize: 16,
+              fontWeight: 600,
+              letterSpacing: "-0.01em",
+            }}
+          >
+            {milestone.title}
+          </h3>
+          <p
+            style={{
+              margin: "0 0 12px 0",
+              color: "var(--ink-soft)",
+              fontSize: 14,
+              lineHeight: 1.55,
+            }}
+          >
+            {milestone.description}
+          </p>
+          {milestone.tags && Array.isArray(milestone.tags) && milestone.tags.length > 0 && (
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 6, justifyContent: "flex-end", marginBottom: 12 }}>
+              {milestone.tags.map((tag) => (
+                <span
+                  key={tag}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 4,
+                    padding: "3px 10px",
+                    borderRadius: 6,
+                    background: "var(--accent-soft)",
+                    border: `1px solid var(--border)`,
+                    color: "var(--accent)",
+                    fontSize: 11,
+                    fontWeight: 500,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.08em",
+                  }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+          {milestone.link && (
+            <a
+              href={milestone.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 4,
+                color: "var(--accent)",
+                fontSize: 12,
+                fontWeight: 500,
+                textDecoration: "none",
+                transition: "transform 0.15s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.02)";
+                e.currentTarget.style.color = "var(--ink)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+                e.currentTarget.style.color = "var(--accent)";
+              }}
+            >
+              {milestone.linkText || "Learn more"}
+              <svg
+                width="10"
+                height="10"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path d="M15 3h6v6" />
+                <path d="M10 14 21 3" />
+              </svg>
+            </a>
+          )}
+        </div>
+      )}
+
+      {/* Marker node */}
       <div
         style={{
           position: "absolute",
           left: "50%",
-          top: 24,
-          transform: "translateX(-50%)",
+          top: "50%",
+          transform: "translate(-50%, -50%)",
           width: 14,
           height: 14,
           borderRadius: "50%",
@@ -38,92 +136,100 @@ function MilestoneItem({ milestone }) {
         }}
       />
 
-      <div style={{ width: "100%" }}>
-        <h3
+      {/* Right-side content */}
+      {!isLeft && (
+        <div
           style={{
-            margin: "0 0 8px 0",
-            color: "var(--ink)",
-            fontSize: 16,
-            fontWeight: 600,
-            letterSpacing: "-0.01em",
+            width: "48%",
+            paddingLeft: 12,
           }}
         >
-          {milestone.title}
-        </h3>
-        <p
-          style={{
-            margin: "0 0 12px 0",
-            color: "var(--ink-soft)",
-            fontSize: 14,
-            lineHeight: 1.55,
-          }}
-        >
-          {milestone.description}
-        </p>
-        {milestone.tags && Array.isArray(milestone.tags) && milestone.tags.length > 0 && (
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 12 }}>
-            {milestone.tags.map((tag) => (
-              <span
-                key={tag}
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 4,
-                  padding: "3px 10px",
-                  borderRadius: 6,
-                  background: "var(--accent-soft)",
-                  border: `1px solid var(--border)`,
-                  color: "var(--accent)",
-                  fontSize: 11,
-                  fontWeight: 500,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.08em",
-                }}
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
-        {milestone.link && (
-          <a
-            href={milestone.link}
-            target="_blank"
-            rel="noopener noreferrer"
+          <h3
             style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 4,
-              color: "var(--accent)",
-              fontSize: 12,
-              fontWeight: 500,
-              textDecoration: "none",
-              transition: "transform 0.15s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "scale(1.02)";
-              e.currentTarget.style.color = "var(--ink)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "scale(1)";
-              e.currentTarget.style.color = "var(--accent)";
+              margin: "0 0 8px 0",
+              color: "var(--ink)",
+              fontSize: 16,
+              fontWeight: 600,
+              letterSpacing: "-0.01em",
             }}
           >
-            {milestone.linkText || "Learn more"}
-            <svg
-              width="10"
-              height="10"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
+            {milestone.title}
+          </h3>
+          <p
+            style={{
+              margin: "0 0 12px 0",
+              color: "var(--ink-soft)",
+              fontSize: 14,
+              lineHeight: 1.55,
+            }}
+          >
+            {milestone.description}
+          </p>
+          {milestone.tags && Array.isArray(milestone.tags) && milestone.tags.length > 0 && (
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 12 }}>
+              {milestone.tags.map((tag) => (
+                <span
+                  key={tag}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 4,
+                    padding: "3px 10px",
+                    borderRadius: 6,
+                    background: "var(--accent-soft)",
+                    border: `1px solid var(--border)`,
+                    color: "var(--accent)",
+                    fontSize: 11,
+                    fontWeight: 500,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.08em",
+                  }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+          {milestone.link && (
+            <a
+              href={milestone.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 4,
+                color: "var(--accent)",
+                fontSize: 12,
+                fontWeight: 500,
+                textDecoration: "none",
+                transition: "transform 0.15s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.02)";
+                e.currentTarget.style.color = "var(--ink)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+                e.currentTarget.style.color = "var(--accent)";
+              }}
             >
-              <path d="M15 3h6v6" />
-              <path d="M10 14 21 3" />
-            </svg>
-          </a>
-        )}
-      </div>
+              {milestone.linkText || "Learn more"}
+              <svg
+                width="10"
+                height="10"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path d="M15 3h6v6" />
+                <path d="M10 14 21 3" />
+              </svg>
+            </a>
+          )}
+        </div>
+      )}
     </motion.div>
   );
 }
@@ -183,7 +289,11 @@ export default function ScrollTimeline({ milestones }) {
         />
 
         {milestones.map((milestone, i) => (
-          <MilestoneItem key={milestone.id || i} milestone={milestone} />
+          <MilestoneItem
+            key={milestone.id || i}
+            milestone={milestone}
+            isLeft={i % 2 === 0}
+          />
         ))}
       </div>
     </section>
