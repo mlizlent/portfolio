@@ -6,7 +6,7 @@ import CurrentFocus from "../components/CurrentFocus.jsx";
 
 export default function Home({ onNavigate }) {
   return (
-    <div className="home-page">
+    <div className="home-page" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>
       <section className="hero">
         <div className="hero-glow" aria-hidden="true" />
         <div className="hero-inner">
