@@ -90,36 +90,6 @@ export default function MacOSWindowSwitcher({ items }) {
             flex: 1,
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
-            <button
-              onClick={cycleBack}
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 4,
-                padding: "6px 12px",
-                borderRadius: 8,
-                border: `1px solid var(--border)`,
-                background: "var(--surface)",
-                color: "var(--ink-soft)",
-                fontSize: 11,
-                fontWeight: 500,
-                cursor: "pointer",
-              }}
-            >
-              <svg
-                width="10"
-                height="10"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <path d="M15 18l-6-6 6-6" />
-              </svg>
-              Back
-            </button>
-          </div>
           <div
             style={{
               display: "inline-flex",
