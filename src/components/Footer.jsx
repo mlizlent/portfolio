@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-inner">
         <span className="footer-copy">
-          © {new Date().getFullYear()} Meroline Lizlent. All rights reserved.
+          © {new Date().getFullYear()} Meroline Lizlent Wasonga. All rights reserved.
         </span>
         <div className="footer-links">
           <a href="mailto:lizwasonga36@gmail.com" aria-label="Email">

@@ -43,7 +43,7 @@ export default function Nav({ currentTab, onChangeTab }) {
         </nav>
 
         <a
-          href="https://github.com"
+          href="https://github.com/mlizlent"
           target="_blank"
           rel="noreferrer"
           className="nav-github"
@@ -77,7 +77,7 @@ export default function Nav({ currentTab, onChangeTab }) {
             </button>
           ))}
           <a
-            href="https://github.com"
+            href="https://github.com/mlizlent"
             target="_blank"
             rel="noreferrer"
             className="nav-mobile-link"
