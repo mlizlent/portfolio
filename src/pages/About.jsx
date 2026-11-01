@@ -1,5 +1,5 @@
 import { Download, Code2, Layers, Zap, Brain } from "lucide-react";
-import SGrowthGrid from "../components/SGrowthGrid.jsx";
+import ConversationSCurve from "../components/ConversationSCurve.jsx";
 
 const SKILL_GROUPS = [
   {
@@ -21,6 +21,51 @@ const SKILL_GROUPS = [
     title: "ML / AI",
     items: ["TensorFlow", "LLM integration", "ML pipelines", "Inference"],
     icon: <Brain size={16} />,
+  },
+];
+
+const CHUNKS = [
+  {
+    id: "introduction",
+    title: "Meroline Lizlent — Full-Stack & ML/AI Engineer",
+    body:
+      "I'm Meroline Lizlent, a full-stack software developer based in Kenya, specializing in ML/AI engineering. I build software end to end — frontend, backend, UI/UX design, and the infrastructure that ships it — with a deep focus on machine learning and AI-powered products.",
+    tags: ["Full-Stack", "ML/AI", "Kenya"],
+  },
+  {
+    id: "educational-context",
+    title: "Zone01 Kisumu — Software Engineering Track",
+    body:
+      "I'm currently working through the Software Engineering track at Zone01 Kisumu, a peer-to-peer programming school focused on peer learning and project-based curriculum, where collaboration replaces traditional instruction.",
+    tags: ["Zone01", "Peer-to-Peer", "Kisumu"],
+  },
+  {
+    id: "independent-building",
+    title: "Bitcoin & Lightning Network Applications",
+    body:
+      "Alongside my studies I build independent projects centered on Bitcoin and Lightning Network systems, aimed at solving real problems in African contexts with fast, low-fee, decentralized financial infrastructure.",
+    tags: ["Bitcoin", "Lightning Network", "Africa"],
+  },
+  {
+    id: "project-domains",
+    title: "Project Domains",
+    body:
+      "I've built repository analyzers that surface codebase insights, ML inference pipelines for data-driven results, ecommerce platforms connecting buyers with local vendors, and civic voting companion apps that help citizens make informed choices.",
+    tags: ["Repo Analysis", "ML Pipelines", "Ecommerce", "Civic Tech"],
+  },
+  {
+    id: "technical-writing",
+    title: "Technical Writing & Portability",
+    body:
+      "I write technical deep-dives on dev.to covering Bitcoin protocol internals, Go, and Python, and I containerize what I ship with Docker so everything runs identically across development, staging, and production.",
+    tags: ["dev.to", "Go", "Python", "Docker"],
+  },
+  {
+    id: "core-technologies",
+    title: "Core Technologies",
+    body:
+      "My toolkit spans Languages (JavaScript, TypeScript, Python, Go, Bash), Frontend (React, Next.js, Tailwind CSS, Figma), Backend & Infra (Node.js, Express.js, FastAPI, PostgreSQL, Docker, CI/CD), and ML/AI (TensorFlow, LLM integration, inference pipelines).",
+    tags: ["JavaScript", "TypeScript", "Python", "Go", "React", "Next.js"],
   },
 ];
 
@@ -87,52 +132,7 @@ export default function About() {
         </div>
       </div>
 
-      <SGrowthGrid
-        milestones={[
-          {
-            id: "zero-knowledge",
-            title: "Zero Knowledge Developer",
-            description:
-              "Started with no formal coding background — curious, self-taught, and eager to learn how software works.",
-            tags: ["Beginner", "Self-taught"],
-          },
-          {
-            id: "first-lines-of-code",
-            title: "First Lines of Code",
-            description:
-              "Wrote my first scripts in Python and Bash, automating small tasks and discovering the joy of building.",
-            tags: ["Python", "Bash"],
-          },
-          {
-            id: "zone01-enrollment",
-            title: "Zone01 Kisumu Enrollment",
-            description:
-              "Joined Zone01 Kisumu, a peer-to-peer programming school, where I learned through peer collaboration and real projects.",
-            tags: ["Zone01", "Peer Learning"],
-          },
-          {
-            id: "bitcoin-lightning",
-            title: "Bitcoin & Lightning Network",
-            description:
-              "Built independent projects centered on Bitcoin and Lightning Network systems for real problems in African contexts.",
-            tags: ["Bitcoin", "Lightning Network"],
-          },
-          {
-            id: "full-stack-ml",
-            title: "Full-Stack + ML/AI",
-            description:
-              "Combined full-stack development with machine learning — repository analyzers, inference pipelines, ecommerce platforms, and voters companion apps.",
-            tags: ["Full-Stack", "ML/AI"],
-          },
-          {
-            id: "current",
-            title: "Today",
-            description:
-              "Software engineer focused on ML/AI engineering, shipping end-to-end products that serve real users and solve real problems.",
-            tags: ["ML Engineer", "Full-Stack"],
-          },
-        ]}
-      />
+      <ConversationSCurve chunks={CHUNKS} />
 
       <div className="about-footer">
         <div className="about-stats">
