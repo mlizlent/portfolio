@@ -1,4 +1,5 @@
 import { Download, Code2, Layers, Zap, Brain } from "lucide-react";
+import ScrollTimeline from "../components/scrollTimeline.jsx";
 
 const SKILL_GROUPS = [
   {
@@ -100,6 +101,35 @@ export default function About() {
           <Download size={15} /> Download CV
         </a>
       </div>
+
+      <ScrollTimeline
+        milestones={[
+          {
+            id: "zone01-enrollment",
+            title: "Zone01 Kisumu Enrollment",
+            description: "Began the Software Engineering track at Zone01 Kisumu, a peer-to-peer programming school focused on peer learning and project-based curriculum.",
+            tags: ["Zone01", "Kisumu", "Software Engineering"],
+          },
+          {
+            id: "bitcoin-focus",
+            title: "Bitcoin & Lightning Network",
+            description: "Started building independent projects centered on Bitcoin and Lightning Network systems aimed at solving real problems in African contexts.",
+            tags: ["Bitcoin", "Lightning Network", "Africa"],
+          },
+          {
+            id: "ml-ai-engineering",
+            title: "ML/AI Engineering Focus",
+            description: "Built repository analyzers, ML inference pipelines, and ecommerce platforms at the intersection of full-stack development and machine learning.",
+            tags: ["ML", "AI", "Full-Stack"],
+          },
+          {
+            id: "technical-writing",
+            title: "Technical Writing on dev.to",
+            description: "Writes technical deep-dives covering Bitcoin protocol internals, Go, and Python; containerizes deployments with Docker for consistent shipping.",
+            tags: ["dev.to", "Writing", "Go", "Python", "Docker"],
+          },
+        ]}
+      />
     </section>
   );
 }
