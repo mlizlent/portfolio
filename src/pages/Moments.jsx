@@ -81,9 +81,6 @@ export default function Moments() {
         <article style={{ marginTop: 24 }}>
           <h2 style={{ color: "var(--accent)", fontWeight: 300 }}>{current.title}</h2>
           <p className="muted" style={{ fontWeight: 300 }}>{current.subtitle}</p>
-          <p style={{ marginTop: 4, fontSize: 12, color: "var(--ink-soft)" }}>
-            {index + 1} / {MOMENTS.length}
-          </p>
           <p style={{ marginTop: 12, maxWidth: 720, fontWeight: 300 }}>{current.description}</p>
           <div
             style={{
