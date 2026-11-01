@@ -231,6 +231,37 @@ export default function Moments() {
           />
         </div>
       </article>
+
+      <hr style={{ border: "none", borderTop: "1px solid var(--border, #eee)", margin: "40px 0" }} />
+
+      <article style={{ marginTop: 40 }}>
+        <h2>Peer-to-Peer Learning at Zone01 Kisumu</h2>
+        <p className="muted">Zone01 Kisumu</p>
+        <p style={{ marginTop: 12, maxWidth: 720 }}>
+          At Zone01 Kisumu, learning happens peer to peer. Instead of listening to
+          lectures, we're given real problems and work them out together: sharing
+          approaches, reviewing each other's code, and explaining our reasoning
+          when a teammate gets stuck. It's a way of learning that makes you
+          better at both building and communicating, because you only really
+          understand something once you can teach it. Some of my biggest
+          breakthroughs came from a conversation with the person sitting next to
+          me.
+        </p>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+            gap: 16,
+            marginTop: 16,
+          }}
+        >
+          <img
+            src="/peer/IMG_9814~2.JPG"
+            alt="Peer-to-Peer Learning at Zone01 Kisumu"
+            style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "cover" }}
+          />
+        </div>
+      </article>
     </section>
     </div>
   );
