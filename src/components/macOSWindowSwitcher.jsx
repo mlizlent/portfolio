@@ -62,7 +62,7 @@ export default function MacOSWindowSwitcher({ items }) {
             fontFamily: '"IBM Plex Mono", monospace',
           }}
         >
-          {item.title}
+          {item.title || item.name}
         </div>
       </div>
 
@@ -148,7 +148,7 @@ export default function MacOSWindowSwitcher({ items }) {
               fontWeight: 600,
             }}
           >
-            {item.title}
+            {item.title || item.name}
           </h3>
           {item.tagline && (
             <p
@@ -172,19 +172,16 @@ export default function MacOSWindowSwitcher({ items }) {
                 maxWidth: 460,
               }}
             >
-              {item.body.map((para, i) => (
-                <p
-                  key={i}
-                  style={{
-                    margin: "0 0 12px 0",
-                    color: "var(--ink-soft)",
-                    fontSize: 12,
-                    lineHeight: 1.65,
-                  }}
-                >
-                  {para}
-                </p>
-              ))}
+              <p
+                style={{
+                  margin: "0 0 12px 0",
+                  color: "var(--ink-soft)",
+                  fontSize: 13,
+                  lineHeight: 1.65,
+                }}
+              >
+                {item.body.join(" ").split(/\s+/).slice(0, 40).join(" ")}
+              </p>
             </div>
           )}
           {item.tags && Array.isArray(item.tags) && item.tags.length > 0 && (
