@@ -1,10 +1,9 @@
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import MLDemo from "./MLDemo.jsx";
 
 export default function ChunkCard({ chunk }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-12%" });
   const [open, setOpen] = useState(false);
 
   const handleView = () => {
@@ -15,7 +14,7 @@ export default function ChunkCard({ chunk }) {
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 16 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -16 }}
       transition={{ type: "spring", stiffness: 120, damping: 16 }}
       className={`about-card ${chunk.id === "computer-vision-nlp" && "about-card-demo"}`}

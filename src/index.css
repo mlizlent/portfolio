@@ -394,10 +394,16 @@ main{ flex: 1; }
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 18px;
+  padding: 20px;
   cursor: pointer;
   outline: none;
   transition: border-color 0.15s ease, transform 0.15s ease;
+  aspect-ratio: 1;
+  max-width: 340px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 .about-card:focus-visible{
   border-color: var(--accent);
@@ -432,6 +438,8 @@ main{ flex: 1; }
   margin-top: 10px;
   padding-top: 10px;
   border-top: 1px solid var(--border);
+  overflow-y: auto;
+  max-height: 60%;
 }
 .about-card-text{
   margin: 0;

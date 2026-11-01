@@ -1,38 +1,15 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-
-const FILTERS = ["All", "Backend", "Frontend", "AI/ML", "Design"];
+import { useState } from "react";
 
 export default function SkillChips({ skills }) {
-  const [filter, setFilter] = useState("All");
-  const containerRef = useRef(null);
   const [revealed, setRevealed] = useState(new Set());
 
-  useEffect(() => {
-    setRevealed(new Set());
-  }, [filter]);
-
-  const chips =
-    filter === "All"
-      ? Object.entries(skills).flatMap(([cat, items]) =>
-          items.map((skill) => ({ cat, skill }))
-        )
-      : skills[filter]?.map((skill) => ({ cat: filter, skill })) || [];
+  const chips = Object.entries(skills).flatMap(([cat, items]) =>
+    items.map((skill) => ({ cat, skill }))
+  );
 
   return (
-    <section className="about-skills" ref={containerRef} aria-label="Skills">
-      <div className="about-skills-filter">
-        {FILTERS.map((f) => (
-          <button
-            key={f}
-            className={`about-filter-btn ${filter === f ? "active" : ""}`}
-            onClick={() => setFilter(f)}
-            aria-pressed={filter === f}
-          >
-            {f}
-          </button>
-        ))}
-      </div>
+    <section className="about-skills" aria-label="Skills">
       <div className="about-skills-grid">
         <AnimatePresence mode="wait">
           {chips.map(({ cat, skill }, i) => {
