@@ -175,17 +175,63 @@ export default function ProjectViewer({ projects }) {
               </span>
             ))}
           </div>
-          <p
-            style={{
-              marginTop: 24,
-              fontSize: 11,
-              color: "var(--muted)",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-            }}
-          >
-            Click anywhere to view next project
-          </p>
+          {project.live && (
+            <div style={{ display: "flex", gap: 10, marginTop: 24, justifyContent: "center" }}>
+              <button
+                onClick={() => alert("Preview mode: " + project.name)}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 6,
+                  padding: "8px 16px",
+                  borderRadius: 8,
+                  border: `1px solid var(--border)`,
+                  background: "var(--surface)",
+                  color: "var(--ink-soft)",
+                  fontSize: 11,
+                  fontWeight: 500,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  cursor: "pointer",
+                }}
+              >
+                Preview
+              </button>
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 6,
+                  padding: "8px 16px",
+                  borderRadius: 8,
+                  background: "var(--accent)",
+                  color: "#131118",
+                  fontSize: 11,
+                  fontWeight: 600,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  textDecoration: "none",
+                  cursor: "pointer",
+                }}
+              >
+                Live site
+                <svg
+                  width="10"
+                  height="10"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M15 3h6v6" />
+                  <path d="M10 14 21 3" />
+                </svg>
+              </a>
+            </div>
+          )}
         </motion.div>
       </AnimatePresence>
     </div>
