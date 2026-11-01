@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 :root{
   --bg: #131118;
@@ -26,14 +26,14 @@ body{
   background: var(--bg);
   color: var(--ink);
   font-size: 15px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
   font-weight: 500;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3{
-  font-family: 'Inter', sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
   font-weight: 600;
   color: var(--ink);
   letter-spacing: -0.01em;
@@ -59,7 +59,7 @@ main{ flex: 1; }
   display: flex; align-items: center; gap: 28px;
 }
 .nav-brand{
-  font-family: 'Inter', sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
   color: #f4f1fb; font-weight: 700; font-size: 15px; margin-right: auto;
 }
 .nav-links{ display: flex; gap: 22px; }
@@ -165,7 +165,7 @@ main{ flex: 1; }
   background: var(--surface); border: 1px solid var(--border);
   border-radius: var(--radius); padding: 22px;
   display: flex; flex-direction: column; gap: 12px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
   font-style: italic;
   transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -174,36 +174,36 @@ main{ flex: 1; }
   transform: translateY(-2px);
   box-shadow: 0 12px 24px rgba(23,20,15,0.06);
 }
-.card h3{ font-size: 1rem; font-family: 'Inter', sans-serif; }
-.card p{ color: var(--ink-soft); font-size: 13px; flex: 1; font-family: 'Inter', sans-serif; }
+.card h3{ font-size: 1rem; font-family: 'IBM Plex Mono', monospace; }
+.card p{ color: var(--ink-soft); font-size: 13px; flex: 1; font-family: 'IBM Plex Mono', monospace; }
 .card-cta{
   display: inline-flex; align-items: center; gap: 6px;
   font-size: 13px; color: var(--accent); font-weight: 500; margin-top: 4px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
 }
 .tag-row{ display: flex; flex-wrap: wrap; gap: 6px; }
 .tag{
   font-size: 12px; background: var(--accent-soft); color: var(--accent);
   border-radius: 6px; padding: 4px 10px; font-weight: 500;
-  font-family: 'Inter', sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 /* text-heavy project cards */
-.card-text h3{ font-size: 1.25rem; margin: 0 0 8px 0; color: var(--ink); letter-spacing: -0.01em; font-family: 'Inter', sans-serif; }
-.card-desc{ color: var(--ink-soft); font-size: 14px; line-height: 1.55; margin: 0 0 12px 0; font-family: 'Inter', sans-serif; }
+.card-text h3{ font-size: 1.25rem; margin: 0 0 8px 0; color: var(--ink); letter-spacing: -0.01em; font-family: 'IBM Plex Mono', monospace; }
+.card-desc{ color: var(--ink-soft); font-size: 14px; line-height: 1.55; margin: 0 0 12px 0; font-family: 'IBM Plex Mono', monospace; }
 .card-text .tag-row{ gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
 .card-text .tag{
   font-size: 11px; padding: 5px 11px; border-radius: 6px;
   background: var(--accent-soft); color: var(--accent); font-weight: 600;
   border: 1px solid rgba(255,0,255,0.25);
-  font-family: 'Inter', sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
 }
 .card-text .card-cta{
   font-size: 13px; color: var(--accent); font-weight: 600; display: inline-flex; align-items: center; gap: 6px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
 }
 .card-text .card-footer{ display: flex; justify-content: space-between; align-items: center; margin-top: 14; padding-top: 12; border-top: 1px solid var(--border); }
-.live-link{ color: var(--accent); font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 4; font-family: 'Inter', sans-serif; }
+.live-link{ color: var(--accent); font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 4; font-family: 'IBM Plex Mono', monospace; }
 
 /* projects page header */
 .projects-hero{
@@ -677,3 +677,6 @@ main{ flex: 1; }
   .about-chunk{ width: 80%; margin-left: 20% !important; }
   .thought-path{ left: 10%; transform: none; }
 }
+
+.home-page{ font-family: 'Inter', sans-serif; }
+.home-page h1, .home-page h2, .home-page h3{ font-family: 'Inter', sans-serif; }

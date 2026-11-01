@@ -6,7 +6,7 @@ import CurrentFocus from "../components/CurrentFocus.jsx";
 
 export default function Home({ onNavigate }) {
   return (
-    <>
+    <div className="home-page">
       <section className="hero">
         <div className="hero-glow" aria-hidden="true" />
         <div className="hero-inner">
@@ -31,6 +31,6 @@ export default function Home({ onNavigate }) {
         <p className="muted">I'm open to freelance projects, collaborations, and full-time opportunities in software and ML/AI engineering.</p>
         <button onClick={() => onNavigate("contact")} className="btn btn-primary">Start a conversation</button>
       </section>
-    </>
+    </div>
   );
 }
