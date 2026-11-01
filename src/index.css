@@ -269,8 +269,7 @@ main{ flex: 1; }
 .about-header h1{ font-size: 2.25rem; margin: 0 0 10px 0; color: var(--ink); letter-spacing: -0.02em; }
 .about-lede{ font-size: 16px; color: var(--ink-soft); line-height: 1.7; max-width: 700px; margin: 0; }
 
-.about-body{ display: grid; grid-template-columns: 1fr 320px; gap: 40px; align-items: start; }
-@media (max-width: 720px){ .about-body{ grid-template-columns: 1fr; gap: 30px; } }
+.about-body{ display: flex; flex-direction: column; gap: 48px; align-items: flex-start; max-width: 680px; margin: 0 auto; }
 
 .about-text h2{ font-size: 1.5rem; margin: 0 0 16px 0; color: var(--ink); letter-spacing: -0.01em; }
 .about-text p{ color: var(--ink-soft); font-size: 15px; line-height: 1.7; margin-bottom: 16px; max-width: 640px; }
@@ -278,7 +277,8 @@ main{ flex: 1; }
 
 .about-skills h2{ font-size: 1.5rem; margin: 0 0 18px 0; color: var(--ink); letter-spacing: -0.01em; }
 .skill-grid{ display: grid; grid-template-columns: 1fr; gap: 18px; }
-.skill-group h3{ font-size: 1.1rem; margin: 0 0 10px 0; color: var(--ink); }
+.skill-group{ }
+.skill-group h3{ margin: 0 0 10px 0; color: var(--ink); font-size: 1.1rem; font-weight: 600; }
 .skill-group .tag-row{ gap: 8px; flex-wrap: wrap; }
 
 .about-footer{ margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
