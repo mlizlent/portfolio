@@ -19,7 +19,7 @@ const SKILL_GROUPS = [
   },
   {
     title: "ML / AI",
-    items: ["TensorFlow", "LLM integration", "ML pipelines", "Inference"],
+    items: ["TensorFlow", "LLM integration", "Inference"],
     icon: <Brain size={16} />,
   },
 ];
@@ -41,30 +41,30 @@ const CHUNKS = [
   },
   {
     id: "independent-building",
-    title: "Bitcoin & Lightning Network Applications",
+    title: "Independent Building Focus",
     body:
-      "Alongside my studies I build independent projects centered on Bitcoin and Lightning Network systems, aimed at solving real problems in African contexts with fast, low-fee, decentralized financial infrastructure.",
-    tags: ["Bitcoin", "Lightning Network", "Africa"],
+      "Alongside my studies I build independent projects aimed at solving real problems with clean, performant software infrastructure.",
+    tags: ["Independent Projects", "Software Engineering"],
   },
   {
     id: "project-domains",
     title: "Project Domains",
     body:
-      "I've built repository analyzers that surface codebase insights, ML inference pipelines for data-driven results, ecommerce platforms connecting buyers with local vendors, and civic voting companion apps that help citizens make informed choices.",
-    tags: ["Repo Analysis", "ML Pipelines", "Ecommerce", "Civic Tech"],
+      "I've built repository analyzers that surface codebase insights, data-driven result systems, ecommerce platforms connecting buyers with local vendors, and civic voting companion apps that help citizens make informed choices.",
+    tags: ["Repo Analysis", "Data Systems", "Ecommerce", "Civic Tech"],
   },
   {
     id: "technical-writing",
     title: "Technical Writing & Portability",
     body:
-      "I write technical deep-dives on dev.to covering Bitcoin protocol internals, Go, and Python, and I containerize what I ship with Docker so everything runs identically across development, staging, and production.",
+      "I write technical deep-dives on dev.to covering Go and Python internals, and I containerize what I ship with Docker so everything runs identically across development, staging, and production.",
     tags: ["dev.to", "Go", "Python", "Docker"],
   },
   {
     id: "core-technologies",
     title: "Core Technologies",
     body:
-      "My toolkit spans Languages (JavaScript, TypeScript, Python, Go, Bash), Frontend (React, Next.js, Tailwind CSS, Figma), Backend & Infra (Node.js, Express.js, FastAPI, PostgreSQL, Docker, CI/CD), and ML/AI (TensorFlow, LLM integration, inference pipelines).",
+      "My toolkit spans Languages (JavaScript, TypeScript, Python, Go, Bash), Frontend (React, Next.js, Tailwind CSS, Figma), Backend & Infra (Node.js, Express.js, FastAPI, PostgreSQL, Docker, CI/CD), and ML/AI (TensorFlow, LLM integration).",
     tags: ["JavaScript", "TypeScript", "Python", "Go", "React", "Next.js"],
   },
 ];
@@ -93,22 +93,20 @@ export default function About() {
             curriculum.
           </p>
           <p>
-            Alongside my studies I build independent projects, many of which
-            center on <strong>Bitcoin and Lightning Network</strong> systems
-            aimed at solving real problems in African contexts.
+            Alongside my studies I build independent projects aimed at solving
+            real problems with clean, performant software infrastructure.
           </p>
           <p>
             A lot of my work sits at the intersection of full-stack
             development and machine learning. I've built repository
-            analyzers, ML inference pipelines, ecommerce platforms, and
-            voters companion apps — always thinking about how the technology
-            serves the people using it.
+            analyzers, data-driven systems, ecommerce platforms, and voters
+            companion apps — always thinking about how the technology serves
+            the people using it.
           </p>
           <p>
             I also write technical deep-dives on
-            <strong>dev.to</strong>, mostly covering Bitcoin protocol
-            internals, Go, and Python, and I containerize what I ship with
-            Docker so it runs the same way everywhere.
+            <strong>dev.to</strong>, mostly covering Go, Python, and
+            containerization so everything runs the same way everywhere.
           </p>
         </div>
 

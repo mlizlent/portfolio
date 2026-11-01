@@ -24,7 +24,7 @@ const PAGE_META = {
   },
   about: {
     title: "About — Meroline Lizlent",
-    description: "Software engineer based in Kenya, focused on ML/AI, Bitcoin, and full-stack development.",
+    description: "Software engineer based in Kenya, focused on ML/AI and full-stack development.",
   },
   contact: {
     title: "Contact — Meroline Lizlent",

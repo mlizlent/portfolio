@@ -32,12 +32,11 @@ const projects = [
     name: "RegenFeed",
     tagline:
       "A full-stack web application built with Go/Buffalo, Svelte, and PostgreSQL, from backend to UI/UX design.",
-    tags: ["Go", "Buffalo", "Svelte", "PostgreSQL", "UI/UX", "Lightning Network"],
+    tags: ["Go", "Buffalo", "Svelte", "PostgreSQL", "UI/UX"],
     live: "https://regenfeed.onrender.com",
     body: [
       "I owned the full stack end to end, backend services with Go and the Buffalo framework, a reactive frontend with Svelte, and a PostgreSQL data layer tying everything together.",
       "The backend handles routing, business logic, and database interactions, while the frontend delivers a fast, component-driven interface with Svelte's reactivity model.",
-      "Bitcoin and Lightning Network payments are integrated into the platform, enabling fast, low-fee transactions directly within the application flow.",
       "I also designed the UI/UX from scratch, mapping user flows, wireframing screens, and building a visual system that keeps the experience intuitive across desktop and mobile.",
       "Deployed live on Render, the project reflects a complete product build: backend, frontend, database, payment integration, and design, all delivered by me.",
     ],
