@@ -1,5 +1,3 @@
-import projects from "../data/projects.js";
-
 const SKILLS = [
   "Full-Stack Development",
   "Frontend Engineering",
