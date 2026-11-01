@@ -7,6 +7,7 @@ export default function ProjectViewer({ projects }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const project = projects[activeIndex % projects.length];
   const cycleNext = () => setActiveIndex((i) => (i + 1) % projects.length);
+  const cycleBack = () => setActiveIndex((i) => (i - 1 + projects.length) % projects.length);
 
   const windowControls = CONTROL_COLORS.map((color, i) => (
     <div
@@ -92,10 +93,42 @@ export default function ProjectViewer({ projects }) {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            padding: 32,
+            padding: 24,
             color: "var(--ink-soft)",
+            overflowY: "auto",
+            flex: 1,
           }}
         >
+          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+            <button
+              onClick={cycleBack}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 4,
+                padding: "6px 12px",
+                borderRadius: 8,
+                border: `1px solid var(--border)`,
+                background: "var(--surface)",
+                color: "var(--ink-soft)",
+                fontSize: 11,
+                fontWeight: 500,
+                cursor: "pointer",
+              }}
+            >
+              <svg
+                width="10"
+                height="10"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+              Back
+            </button>
+          </div>
           <div
             style={{
               display: "inline-flex",
@@ -128,22 +161,46 @@ export default function ProjectViewer({ projects }) {
           </h3>
           <p
             style={{
-              margin: "0 0 20px 0",
+              margin: "0 0 16px 0",
               color: "var(--ink-soft)",
               fontSize: 15,
               lineHeight: 1.6,
               textAlign: "center",
-              maxWidth: 420,
+              maxWidth: 460,
             }}
           >
             {project.tagline}
           </p>
+          {(project.body || []).length > 0 && (
+          <div
+            style={{
+              textAlign: "left",
+              marginBottom: 20,
+              maxWidth: 460,
+            }}
+          >
+            {(project.body || []).map((para, i) => (
+              <p
+                key={i}
+                style={{
+                  margin: "0 0 12px 0",
+                  color: "var(--ink-soft)",
+                  fontSize: 13,
+                  lineHeight: 1.7,
+                }}
+              >
+                {para}
+              </p>
+            ))}
+            </div>
+          )}
           <div
             style={{
               display: "flex",
               gap: 8,
               flexWrap: "wrap",
               justifyContent: "center",
+              marginBottom: 16,
             }}
           >
             {project.tags.map((tag) => (
@@ -175,28 +232,28 @@ export default function ProjectViewer({ projects }) {
               </span>
             ))}
           </div>
-          {project.live && (
-            <div style={{ display: "flex", gap: 10, marginTop: 24, justifyContent: "center" }}>
-              <button
-                onClick={() => alert("Preview mode: " + project.name)}
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 6,
-                  padding: "8px 16px",
-                  borderRadius: 8,
-                  border: `1px solid var(--border)`,
-                  background: "var(--surface)",
-                  color: "var(--ink-soft)",
-                  fontSize: 11,
-                  fontWeight: 500,
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  cursor: "pointer",
-                }}
-              >
-                Preview
-              </button>
+          <div style={{ display: "flex", gap: 10, justifyContent: "center" }}>
+            <button
+              onClick={() => alert("Preview mode: " + project.name)}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 6,
+                padding: "8px 16px",
+                borderRadius: 8,
+                border: `1px solid var(--border)`,
+                background: "var(--surface)",
+                color: "var(--ink-soft)",
+                fontSize: 11,
+                fontWeight: 500,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                cursor: "pointer",
+              }}
+            >
+              Preview
+            </button>
+            {project.live && (
               <a
                 href={project.live}
                 target="_blank"
@@ -230,8 +287,8 @@ export default function ProjectViewer({ projects }) {
                   <path d="M10 14 21 3" />
                 </svg>
               </a>
-            </div>
-          )}
+            )}
+          </div>
         </motion.div>
       </AnimatePresence>
     </div>
