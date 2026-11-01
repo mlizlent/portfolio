@@ -4,7 +4,6 @@ export default function MacOSWindowSwitcher({ items }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const item = items[activeIndex % items.length];
   const cycleNext = () => setActiveIndex((i) => (i + 1) % items.length);
-  const cycleBack = () => setActiveIndex((i) => (i - 1 + items.length) % items.length);
 
   const controlColors = ["var(--accent)", "var(--accent-soft)", "var(--muted)"];
 
