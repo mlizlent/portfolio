@@ -161,6 +161,40 @@ export default function Moments() {
           />
         </div>
       </article>
+
+      <hr style={{ border: "none", borderTop: "1px solid var(--border, #eee)", margin: "40px 0" }} />
+
+      <article style={{ marginTop: 40 }}>
+        <h2>Gopher Conference Africa</h2>
+        <p className="muted">October 2026 · PrideInn Azure Hotel, Nairobi</p>
+        <p style={{ marginTop: 12, maxWidth: 720 }}>
+          In October 2026, I attended Gopher Conference Africa at PrideInn Azure
+          Hotel in Nairobi, where Go developers from across Africa and abroad came
+          together to share their knowledge. Go is one of the languages I build
+          with most, so it was valuable to hear how other engineers use it in real
+          systems and to meet people from the community behind it. I came away
+          with new ideas and with connections I hope to keep building on.
+        </p>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+            gap: 16,
+            marginTop: 16,
+          }}
+        >
+          <img
+            src="/gopher/249A6056~2.jpg"
+            alt="Gopher Conference Africa"
+            style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "cover" }}
+          />
+          <img
+            src="/gopher/IMG-20261016-WA0067.jpg"
+            alt="Gopher Conference Africa"
+            style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "cover" }}
+          />
+        </div>
+      </article>
     </section>
     </div>
   );
