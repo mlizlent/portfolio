@@ -695,8 +695,3 @@ main{ flex: 1; }
 .work-step{ background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; }
 .work-badge{ display: inline-block; background: var(--accent); color: #fff; border-radius: 999px; padding: 4px 10px; font-size: 11px; font-weight: 700; margin-bottom: 8px; }
 
-.skill-group:nth-child(1) .skill-cat{ color: #ff6b6b; }
-.skill-group:nth-child(2) .skill-cat{ color: #4ecdc4; }
-.skill-group:nth-child(3) .skill-cat{ color: #ffe66d; }
-.skill-group:nth-child(4) .skill-cat{ color: #a78bfa; }
-.skill-group:nth-child(5) .skill-cat{ color: #f472b6; }
