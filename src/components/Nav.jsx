@@ -25,7 +25,7 @@ export default function Nav({ currentTab, onChangeTab }) {
           className="nav-brand"
           style={{ background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left' }}
         >
-          <img src="/icon/Screenshot%20From%202026-11-01%2015-29-37.png" alt="Meroline Lizlent" style={{ height: 40, width: 40, borderRadius: "50%", objectFit: "cover" }} />
+          <img src="/icon.png" alt="Meroline Lizlent" style={{ height: 40, width: 40, borderRadius: "50%", objectFit: "cover" }} />
         </button>
 
         <nav className="nav-links">
