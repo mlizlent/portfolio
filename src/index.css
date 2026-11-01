@@ -388,12 +388,6 @@ main{ flex: 1; }
   grid-template-columns: 1fr;
   gap: 16px;
 }
-@media (min-width: 640px){
-  .about-chunks-grid{
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-}
 
 /* Card */
 .about-card{
@@ -415,9 +409,8 @@ main{ flex: 1; }
 }
 .about-card-header{
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 10px;
+  flex-direction: column;
+  gap: 6px;
   margin-bottom: 8px;
 }
 .about-card-title{
