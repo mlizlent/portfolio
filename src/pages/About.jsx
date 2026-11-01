@@ -1,5 +1,5 @@
 import { Download, Code2, Layers, Zap, Brain } from "lucide-react";
-import ScrollTimeline from "../components/scrollTimeline.jsx";
+import SGrowthGrid from "../components/SGrowthGrid.jsx";
 
 const SKILL_GROUPS = [
   {
@@ -87,35 +87,49 @@ export default function About() {
         </div>
       </div>
 
-      <ScrollTimeline
+      <SGrowthGrid
         milestones={[
+          {
+            id: "zero-knowledge",
+            title: "Zero Knowledge Developer",
+            description:
+              "Started with no formal coding background — curious, self-taught, and eager to learn how software works.",
+            tags: ["Beginner", "Self-taught"],
+          },
+          {
+            id: "first-lines-of-code",
+            title: "First Lines of Code",
+            description:
+              "Wrote my first scripts in Python and Bash, automating small tasks and discovering the joy of building.",
+            tags: ["Python", "Bash"],
+          },
           {
             id: "zone01-enrollment",
             title: "Zone01 Kisumu Enrollment",
             description:
-              "Began the Software Engineering track at Zone01 Kisumu, a peer-to-peer programming school focused on peer learning and project-based curriculum.",
-            tags: ["Zone01", "Kisumu", "Software Engineering"],
+              "Joined Zone01 Kisumu, a peer-to-peer programming school, where I learned through peer collaboration and real projects.",
+            tags: ["Zone01", "Peer Learning"],
           },
           {
-            id: "bitcoin-focus",
+            id: "bitcoin-lightning",
             title: "Bitcoin & Lightning Network",
             description:
-              "Started building independent projects centered on Bitcoin and Lightning Network systems aimed at solving real problems in African contexts.",
-            tags: ["Bitcoin", "Lightning Network", "Africa"],
+              "Built independent projects centered on Bitcoin and Lightning Network systems for real problems in African contexts.",
+            tags: ["Bitcoin", "Lightning Network"],
           },
           {
-            id: "ml-ai-engineering",
-            title: "ML/AI Engineering Focus",
+            id: "full-stack-ml",
+            title: "Full-Stack + ML/AI",
             description:
-              "Built repository analyzers, ML inference pipelines, ecommerce platforms, and voters companion apps at the intersection of full-stack development and machine learning.",
-            tags: ["ML", "AI", "Full-Stack"],
+              "Combined full-stack development with machine learning — repository analyzers, inference pipelines, ecommerce platforms, and voters companion apps.",
+            tags: ["Full-Stack", "ML/AI"],
           },
           {
-            id: "technical-writing",
-            title: "Technical Writing on dev.to",
+            id: "current",
+            title: "Today",
             description:
-              "Writes technical deep-dives covering Bitcoin protocol internals, Go, and Python; containerizes deployments with Docker for consistent shipping.",
-            tags: ["dev.to", "Writing", "Go", "Python", "Docker"],
+              "Software engineer focused on ML/AI engineering, shipping end-to-end products that serve real users and solve real problems.",
+            tags: ["ML Engineer", "Full-Stack"],
           },
         ]}
       />
