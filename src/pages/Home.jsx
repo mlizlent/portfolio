@@ -11,7 +11,7 @@ export default function Home({ onNavigate }) {
         <div className="hero-glow" aria-hidden="true" />
         <div className="hero-inner">
           <span className="badge">Available for opportunities</span>
-          <h1>Meroline Lizlent Wasonga, full-stack developer specializing in ML/AI engineering.</h1>
+          <h1>Meroline Lizlent Wasonga, <span style={{ color: "var(--accent)" }}>full-stack developer specializing in ML/AI engineering.</span></h1>
           <p className="hero-lede"><Typewriter /></p>
           <p className="hero-lede">I turn ideas into working, AI-powered products. I design and build them end to end, from the interface people use to the backend and the Docker setup that ships them.</p>
           <div className="hero-actions" style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
