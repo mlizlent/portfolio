@@ -2,7 +2,8 @@ import { useRef } from "react";
 import { motion, useInView, useTransform, useMotionValue } from "framer-motion";
 
 function MilestoneItem({ milestone }) {
-  const [ref, isInView] = useInView({ once: true, margin: "-10%" });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-10%" });
 
   return (
     <motion.div
