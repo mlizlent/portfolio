@@ -164,8 +164,8 @@ export default function ProjectViewer({ projects, startSlug }) {
             style={{
               margin: "0 0 16px 0",
               color: "var(--ink-soft)",
-              fontSize: 15,
-              lineHeight: 1.6,
+              fontSize: 14,
+              lineHeight: 1.55,
               textAlign: "center",
               maxWidth: 460,
             }}
@@ -186,8 +186,8 @@ export default function ProjectViewer({ projects, startSlug }) {
                 style={{
                   margin: "0 0 12px 0",
                   color: "var(--ink-soft)",
-                  fontSize: 13,
-                  lineHeight: 1.7,
+                  fontSize: 12,
+                  lineHeight: 1.65,
                 }}
               >
                 {para}
