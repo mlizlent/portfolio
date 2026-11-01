@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const MOMENTS = [
   {
-    title: "Graduation — Mount Kenya University",
+    title: "Graduation at Mount Kenya University",
     subtitle: "Bachelor of Technology in Computer and Electronic Systems",
     description:
       "Graduating from Mount Kenya University with a Bachelor of Technology in Computer and Electronic Systems was the milestone that started my journey in technology. The course gave me a solid grounding in both software and the hardware and systems it runs on, and I carry that thinking into everything I build today. It was a day to thank the family, friends, and lecturers who supported me along the way, and to look ahead to what I'd build next.",
@@ -68,17 +68,18 @@ export default function Moments() {
   return (
     <div className="home-page">
       <section className="section page-top">
-        <h1>Moments</h1>
+        <h1 style={{ color: "var(--accent)" }}>Moments</h1>
         <article style={{ marginTop: 24 }}>
-          <h2>{current.title}</h2>
+          <h2 style={{ color: "var(--accent)" }}>{current.title}</h2>
           <p className="muted">{current.subtitle}</p>
           <p style={{ marginTop: 12, maxWidth: 720 }}>{current.description}</p>
           <div
             style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-              gap: 16,
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 8,
               marginTop: 16,
+              justifyContent: "center",
             }}
           >
             {current.photos.map((src) => (
@@ -86,13 +87,13 @@ export default function Moments() {
                 key={src}
                 src={src}
                 alt={current.title}
-                style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "contain" }}
+                style={{ maxWidth: 320, maxHeight: 260, borderRadius: 12, objectFit: "contain" }}
               />
             ))}
           </div>
           <div style={{ display: "flex", gap: 12, marginTop: 24 }}>
-            {index > 0 && <button onClick={prev} className="btn btn-ghost" style={{ color: "#000" }}>Previous</button>}
-            <button onClick={next} className="btn btn-primary">Next</button>
+            {index > 0 && <button onClick={prev} className="btn btn-ghost" style={{ color: "var(--accent)", borderColor: "var(--accent)" }}>Previous</button>}
+            <button onClick={next} className="btn btn-primary" style={{ background: "var(--accent)", color: "#fff" }}>Next</button>
           </div>
         </article>
       </section>
