@@ -1,27 +1,3 @@
-import { useEffect, useRef, useState } from "react";
-import Typewriter from "./Typewriter.jsx";
-import ScrollProgress from "./ScrollProgress.jsx";
-
 export default function Hero() {
-  const nameRef = useRef(null);
-  const [nameVisible, setNameVisible] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setNameVisible(true), 300);
-    return () => clearTimeout(timer);
-  }, []);
-
-  return (
-    <section className="about-hero" aria-labelledby="about-hero-heading">
-      <ScrollProgress />
-      <div className="about-hero-inner">
-        <div className="about-hero-name">
-          <h1 id="about-hero-heading">Meroline Lizlent Wasonga</h1>
-          <p className="about-hero-sub">
-            Full-stack software developer and ML/AI engineer based in Kenya.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
+  return null;
 }
