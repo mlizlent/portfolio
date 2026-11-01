@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
-function ConversationBlock({ chunk, columnStart, theme }) {
+function ConversationBlock({ chunk, theme }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-12%" });
 
@@ -23,8 +23,10 @@ function ConversationBlock({ chunk, columnStart, theme }) {
             }
           : { opacity: 0, scale: 0 }
       }
-      className={`col-span-4 md:col-span-5 ${columnStart}`}
       style={{
+        display: "flex",
+        flexDirection: "column",
+        width: "100%",
         overflow: "hidden",
       }}
     >
@@ -45,6 +47,7 @@ function ConversationBlock({ chunk, columnStart, theme }) {
           style={{
             position: "absolute",
             top: 12,
+            left: -14,
             width: 10,
             height: 10,
             borderRadius: "50%",
@@ -117,17 +120,6 @@ export default function ConversationSCurve({ chunks, theme }) {
   };
   const t = theme ? { ...defaultTheme, ...theme } : defaultTheme;
 
-  // S-shape serpentine column-start positions across a 12-col grid
-  // Row 1: cols 1-4 (left), Row 2: cols 9-6 (right), Row 3: cols 1-4 (left), etc.
-  const serpentineStarts = chunks.map((_, i) => {
-    const row = Math.floor(i / 2);
-    const posInRow = i % 2;
-    if (row % 2 === 0) {
-      return posInRow === 0 ? "col-start-1" : "col-start-4";
-    }
-    return posInRow === 0 ? "col-start-9" : "col-start-6";
-  });
-
   return (
     <section
       style={{
@@ -142,24 +134,20 @@ export default function ConversationSCurve({ chunks, theme }) {
       <div
         style={{
           position: "relative",
-          display: "grid",
-          gridTemplateColumns: "repeat(12, 1fr)",
-          gap: "24px 32px",
-          maxWidth: 960,
+          maxWidth: 640,
           margin: "0 auto",
           zIndex: 2,
         }}
       >
-        {/* Dotted winding path line */}
+        {/* Dotted path line running down the left side of content */}
         <div
           style={{
             position: "absolute",
-            left: "50%",
+            left: 2,
             top: 0,
             bottom: 0,
             width: 1,
             background: `repeating-linear-gradient(180deg, ${t.border}, ${t.border} 6px, transparent 6px, transparent 12px)`,
-            transform: "translateX(-50%)",
             zIndex: 1,
           }}
         />
@@ -168,7 +156,6 @@ export default function ConversationSCurve({ chunks, theme }) {
           <ConversationBlock
             key={chunk.id || i}
             chunk={chunk}
-            columnStart={serpentineStarts[i]}
             theme={t}
           />
         ))}
