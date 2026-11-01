@@ -195,6 +195,42 @@ export default function Moments() {
           />
         </div>
       </article>
+
+      <hr style={{ border: "none", borderTop: "1px solid var(--border, #eee)", margin: "40px 0" }} />
+
+      <article style={{ marginTop: 40 }}>
+        <h2>Impala Sanctuary Nature Walk</h2>
+        <p className="muted">Kisumu</p>
+        <p style={{ marginTop: 12, maxWidth: 720 }}>
+          Long hours of coding can wear you down, so a fellow developer and I
+          decided to break the routine with a nature walk at Impala Sanctuary in
+          Kisumu. We left our laptops behind and spent the afternoon walking,
+          talking, and taking in the scenery. We came back refreshed, with clearer
+          heads and a few new ideas for the problems we'd been stuck on. It
+          taught me that stepping away from the keyboard is part of doing the
+          work well, and that some of the best conversations with teammates happen
+          away from the desk.
+        </p>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+            gap: 16,
+            marginTop: 16,
+          }}
+        >
+          <img
+            src="/nature/IMG_4624~2.jpg"
+            alt="Impala Sanctuary Nature Walk"
+            style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "cover" }}
+          />
+          <img
+            src="/nature/IMG_4627~2.jpg"
+            alt="Impala Sanctuary Nature Walk"
+            style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "cover" }}
+          />
+        </div>
+      </article>
     </section>
     </div>
   );
