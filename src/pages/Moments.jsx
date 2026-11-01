@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const MOMENTS = [
   {
@@ -65,14 +65,26 @@ export default function Moments() {
   const next = () => setIndex((i) => (i + 1) % MOMENTS.length);
   const prev = () => setIndex((i) => (i - 1 + MOMENTS.length) % MOMENTS.length);
 
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "ArrowRight") next();
+      if (e.key === "ArrowLeft") prev();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
   return (
     <div className="home-page">
       <section className="section page-top">
-        <h1 style={{ color: "var(--accent)" }}>Moments</h1>
+        <h1 style={{ color: "var(--accent)", fontWeight: 300 }}>Moments</h1>
         <article style={{ marginTop: 24 }}>
-          <h2 style={{ color: "var(--accent)" }}>{current.title}</h2>
-          <p className="muted">{current.subtitle}</p>
-          <p style={{ marginTop: 12, maxWidth: 720 }}>{current.description}</p>
+          <h2 style={{ color: "var(--accent)", fontWeight: 300 }}>{current.title}</h2>
+          <p className="muted" style={{ fontWeight: 300 }}>{current.subtitle}</p>
+          <p style={{ marginTop: 4, fontSize: 12, color: "var(--ink-soft)" }}>
+            {index + 1} / {MOMENTS.length}
+          </p>
+          <p style={{ marginTop: 12, maxWidth: 720, fontWeight: 300 }}>{current.description}</p>
           <div
             style={{
               display: "flex",
@@ -82,18 +94,19 @@ export default function Moments() {
               justifyContent: "center",
             }}
           >
-            {current.photos.map((src) => (
+            {current.photos.map((src, i) => (
               <img
                 key={src}
                 src={src}
-                alt={current.title}
+                alt={`${current.title} photo ${i + 1}`}
+                loading="lazy"
                 style={{ maxWidth: 320, maxHeight: 260, borderRadius: 12, objectFit: "contain" }}
               />
             ))}
           </div>
           <div style={{ display: "flex", gap: 12, marginTop: 24 }}>
-            {index > 0 && <button onClick={prev} className="btn btn-ghost" style={{ color: "var(--accent)", borderColor: "var(--accent)" }}>Previous</button>}
-            <button onClick={next} className="btn btn-primary" style={{ background: "var(--accent)", color: "#fff" }}>Next</button>
+            {index > 0 && <button onClick={prev} className="btn btn-ghost" aria-label="Previous moment" style={{ color: "var(--accent)", borderColor: "var(--accent)" }}>Previous</button>}
+            <button onClick={next} className="btn btn-primary" aria-label="Next moment" style={{ background: "var(--accent)", color: "#fff" }}>Next</button>
           </div>
         </article>
       </section>
