@@ -56,58 +56,6 @@ const projects = [
     ],
   },
   {
-    slug: "ml-pipeline",
-    name: "ML Inference Pipeline",
-    tagline:
-      "An end-to-end machine learning pipeline for data preprocessing, model inference, and result visualization.",
-    tags: ["Python", "TensorFlow", "FastAPI"],
-    live: null,
-    body: [
-      "A pipeline that takes raw input data through preprocessing, feeds it to a trained model for inference, and returns results through a FastAPI service layer.",
-      "Built to keep the preprocessing and inference stages decoupled, so the model can be swapped or retrained without reworking the surrounding service.",
-      "Results are exposed in a form suited to visualization, closing the loop between raw data and something a person can actually read and act on.",
-    ],
-  },
-  {
-    slug: "design-system",
-    name: "UI/UX Design System",
-    tagline:
-      "A cohesive component library and design tokens used to ship consistent, accessible interfaces across products.",
-    tags: ["Figma", "React", "Tailwind"],
-    live: null,
-    body: [
-      "A shared set of design tokens, color, type, spacing, paired with a matching React component library, so visual decisions are made once and reused everywhere.",
-      "Designed first in Figma, then implemented as components so the handoff between design and engineering stays tight and nothing drifts out of sync.",
-      "Built with accessibility as a baseline requirement rather than an afterthought: keyboard focus, contrast, and semantic markup are part of every component.",
-    ],
-  },
-  {
-    slug: "dockerized-api",
-    name: "Dockerized Backend API",
-    tagline:
-      "A containerized REST API with automated deployments, scalable architecture, and comprehensive documentation.",
-    tags: ["Node.js", "Docker", "PostgreSQL"],
-    live: null,
-    body: [
-      "A REST API built on Node.js and backed by PostgreSQL, packaged as a Docker image so it runs identically in development, staging, and production.",
-      "Deployments are automated end to end, and the service is structured to scale horizontally as load grows.",
-      "Documentation is treated as part of the deliverable, not an afterthought — every endpoint is documented so the API is usable by someone who didn't build it.",
-    ],
-  },
-  {
-    slug: "open-source-tools",
-    name: "Open Source DevTools",
-    tagline:
-      "Command-line utilities and GitHub Actions that automate repetitive development workflows.",
-    tags: ["Python", "Bash", "GitHub Actions"],
-    live: null,
-    body: [
-      "A collection of small, focused CLI utilities and GitHub Actions that remove repetitive manual steps from everyday development work.",
-      "Each tool is scoped to do one job well, the same philosophy applied to their design as to shipping product code.",
-      "Written in Python and Bash, and wired into CI so the automation runs the same way for every contributor, not just locally.",
-    ],
-  },
-  {
     slug: "zone01",
     name: "Zone01 Kisumu",
     tagline:
