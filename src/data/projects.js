@@ -107,6 +107,76 @@ const projects = [
       "Written in Python and Bash, and wired into CI so the automation runs the same way for every contributor, not just locally.",
     ],
   },
+  {
+    slug: "zone01",
+    name: "Zone01 Kisumu",
+    tagline:
+      "SEO and QA work on the Zone01 Kisumu website, improving search visibility and quality assurance.",
+    tags: ["SEO", "QA", "Web"],
+    live: "https://www.zone01kisumu.ke/",
+    body: [
+      "Performed SEO optimization on the Zone01 Kisumu website to improve search engine visibility and rankings.",
+      "Led quality assurance efforts, testing the site across devices and browsers to catch bugs and ensure a consistent user experience.",
+      "Worked on content structure, metadata, and performance improvements so the site ranks better and loads faster.",
+      "Collaborated with the team to ship a polished, production-ready website for the Kisumu campus.",
+    ],
+  },
+  {
+    slug: "chiro",
+    name: "Chiro",
+    tagline:
+      "An ecommerce platform for online shopping across Western Kenya.",
+    tags: ["Ecommerce", "Next.js", "PostgreSQL"],
+    live: null,
+    body: [
+      "An online shopping app built for Western Kenya, connecting buyers with local sellers and vendors.",
+      "End-to-end ecommerce experience: product browsing, cart, checkout, and order tracking.",
+      "Built with Next.js on the frontend and PostgreSQL on the backend, supporting payments and inventory management.",
+      "Designed to serve the Western Kenya region with a localized, accessible shopping experience.",
+    ],
+  },
+  {
+    slug: "civicvote",
+    name: "CivicVote",
+    tagline:
+      "A voters companion app — UI/UX design to help citizens navigate elections and make informed choices.",
+    tags: ["UI/UX", "Figma", "Design"],
+    live: null,
+    body: [
+      "Designed the UI/UX for CivicVote, a voters companion app that helps citizens navigate elections and make informed choices.",
+      "Mapped user flows, wireframed screens, and built a visual system focused on clarity and accessibility.",
+      "Created an intuitive interface for browsing candidates, understanding ballots, and accessing voting information.",
+      "Delivered high-fidelity designs and a component library ready for development handoff.",
+    ],
+  },
+  {
+    slug: "micro-influencer",
+    name: "Micro Influencer",
+    tagline:
+      "A platform connecting business brands with influencers for business campaigns.",
+    tags: ["Next.js", "Frontend", "Influencer Marketing"],
+    live: null,
+    body: [
+      "Built the frontend for a micro-influencer platform where business brands connect with influencers to run campaigns.",
+      "Designed and implemented brand and influencer onboarding flows, campaign discovery, and collaboration dashboards.",
+      "Built with Next.js for a fast, responsive, and SEO-friendly user experience.",
+      "Enabled brands to find, vet, and partner with influencers while giving influencers a clean way to manage campaigns and earnings.",
+    ],
+  },
+  {
+    slug: "guidely",
+    name: "Guidely",
+    tagline:
+      "A RAG (Retrieval-Augmented Generation) system for intelligent document search and Q&A.",
+    tags: ["Python", "React", "RAG", "AI/ML"],
+    live: "https://github.com/mlizlent/guidely",
+    body: [
+      "Built Guidely, a RAG system that retrieves relevant context from documents and generates accurate answers using an LLM.",
+      "Python backend handles document ingestion, embedding generation, vector storage, and retrieval pipelines.",
+      "React frontend provides a clean interface for uploading documents, querying the knowledge base, and viewing sourced answers.",
+      "Designed for accurate, citation-backed responses so users can trace answers back to the original documents.",
+    ],
+  },
 ];
 
 export default projects;
