@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Moments from "./pages/Moments";
 import ProjectDetail from "./pages/ProjectDetail";
 import projectsData from "./data/projects.js";
 
@@ -54,6 +55,8 @@ export default function App() {
         return <About />;
       case "contact":
         return <Contact />;
+      case "moments":
+        return <Moments />;
       case "project-detail":
         return (
           <ProjectDetail

@@ -6,6 +6,7 @@ const LINKS = [
   { id: "projects", label: "Projects" },
   { id: "about", label: "About" },
   { id: "contact", label: "Contact" },
+  { id: "moments", label: "Moments" },
 ];
 
 export default function Nav({ currentTab, onChangeTab }) {
