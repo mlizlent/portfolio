@@ -3,8 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const CONTROL_COLORS = ["var(--accent)", "var(--accent-soft)", "var(--muted)"];
 
-export default function ProjectViewer({ projects }) {
-  const [activeIndex, setActiveIndex] = useState(0);
+export default function ProjectViewer({ projects, startSlug }) {
+  const startIndex = projects.findIndex((p) => p.slug === startSlug);
+  const [activeIndex, setActiveIndex] = useState(startIndex >= 0 ? startIndex : 0);
   const project = projects[activeIndex % projects.length];
   const cycleNext = () => setActiveIndex((i) => (i + 1) % projects.length);
   const cycleBack = () => setActiveIndex((i) => (i - 1 + projects.length) % projects.length);
