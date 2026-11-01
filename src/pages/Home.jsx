@@ -22,8 +22,8 @@ export default function Home({ onNavigate }) {
       </section>
 
       <HelpCards />
-      <SkillsGrid />
       <WorkProcess />
+      <SkillsGrid />
       <CurrentFocus />
 
       <section className="section cta-section">
