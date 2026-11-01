@@ -61,7 +61,7 @@ export default function Moments() {
               key={src}
               src={src}
               alt="Build From Here Conference"
-              style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "cover" }}
+              style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "contain" }}
             />
           ))}
         </div>
@@ -92,7 +92,7 @@ export default function Moments() {
           <img
             src="/bitcoin/7L6A0067~3.jpg"
             alt="Bitcoin Lightning Bootcamp"
-            style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "cover" }}
+            style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "contain" }}
           />
         </div>
       </article>
@@ -122,7 +122,7 @@ export default function Moments() {
           <img
             src="/green/IMG_2348~2.JPG"
             alt="GreenTech Hackathon"
-            style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "cover" }}
+            style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "contain" }}
           />
         </div>
       </article>
@@ -152,12 +152,12 @@ export default function Moments() {
           <img
             src="/judge/DSC00845%20(1).jpg"
             alt="Tech Challenge Kenya"
-            style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "cover" }}
+            style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "contain" }}
           />
           <img
             src="/judge/IMG-20260711-WA0120.jpg"
             alt="Tech Challenge Kenya"
-            style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "cover" }}
+            style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "contain" }}
           />
         </div>
       </article>
@@ -186,12 +186,12 @@ export default function Moments() {
           <img
             src="/gopher/249A6056~2.jpg"
             alt="Gopher Conference Africa"
-            style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "cover" }}
+            style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "contain" }}
           />
           <img
             src="/gopher/IMG-20261016-WA0067.jpg"
             alt="Gopher Conference Africa"
-            style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "cover" }}
+            style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "contain" }}
           />
         </div>
       </article>
@@ -222,12 +222,12 @@ export default function Moments() {
           <img
             src="/nature/IMG_4624~2.jpg"
             alt="Impala Sanctuary Nature Walk"
-            style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "cover" }}
+            style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "contain" }}
           />
           <img
             src="/nature/IMG_4627~2.jpg"
             alt="Impala Sanctuary Nature Walk"
-            style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "cover" }}
+            style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "contain" }}
           />
         </div>
       </article>
@@ -258,7 +258,7 @@ export default function Moments() {
           <img
             src="/peer/IMG_9814~2.JPG"
             alt="Peer-to-Peer Learning at Zone01 Kisumu"
-            style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "cover" }}
+            style={{ width: "100%", maxHeight: 260, borderRadius: 12, objectFit: "contain" }}
           />
         </div>
       </article>
