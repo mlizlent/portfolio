@@ -91,7 +91,7 @@ export default function Moments() {
             ))}
           </div>
           <div style={{ display: "flex", gap: 12, marginTop: 24 }}>
-            <button onClick={prev} className="btn btn-ghost">Previous</button>
+            {index > 0 && <button onClick={prev} className="btn btn-ghost">Previous</button>}
             <button onClick={next} className="btn btn-primary">Next</button>
           </div>
         </article>
