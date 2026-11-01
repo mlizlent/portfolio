@@ -1,14 +1,13 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import MLDemo from "./MLDemo.jsx";
 
 export default function ChunkCard({ chunk }) {
   const ref = useRef(null);
-  const [isInView, setIsInView] = useState(false);
+  const isInView = useInView(ref, { once: true, margin: "-12%" });
   const [open, setOpen] = useState(false);
 
   const handleView = () => {
-    setIsInView(true);
     setOpen(true);
   };
 
